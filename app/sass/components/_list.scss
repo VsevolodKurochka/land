@@ -1,0 +1,82 @@
+.list{
+  li{
+    @extend .relative;
+    
+    &:last-child{
+      margin-bottom: 0;
+    }
+    &:after{
+      @extend .pseudo;
+      top: 0;
+    }
+  }
+  &-check{
+    margin-top: 15px;
+    li{
+      margin-bottom: 15px;
+      &:after{
+        width: 27px;
+        height: 25px;
+        @include bg("../img/check.png");
+      }
+    }
+    &-blue{
+      li{
+        &:after{
+          @include bg("../img/check-blue.png");
+        }
+      }
+    }
+    &-orange{
+      li{
+        &:after{
+          @include bg("../img/check-orange.png");
+        }
+      }
+    }
+  }
+  &-lines{
+    li{
+      padding-left: 30px;
+      &:after{
+        left: 0;
+        top: 50%;
+        margin-top: -1px;
+        width: 10px;
+        height: 2px;
+        background-color: setColor(orange);
+      }
+    }
+    &-corp{
+      li{
+        &:after{
+          background-color: setColor(corp);
+        }
+      }
+    }
+  }
+  @include resp-max(sm){
+    &-check{
+      text-align: center;
+      margin-bottom: 30px;
+      li{
+        padding-top: 30px;
+        &:after{
+          left: 50%;
+          margin-left: -14.5px;
+        }
+      }
+    }
+  }
+  @include resp-min(sm){
+    margin-bottom: 15px;
+    &-check{
+      li{
+        padding-left: 35px;
+        &:after{
+          left: 0;
+        }
+      }
+    }
+  }
+}

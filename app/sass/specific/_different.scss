@@ -1,0 +1,1074 @@
+.color{
+  &-light{
+    color: setColor(light);
+  }
+  &-orange{
+    color: setColor(orange);
+  }
+  &-corp{
+    color: setColor(corp);
+  }
+}
+.development{
+  padding: 15px;
+  background-color: #000;
+  color: #fff;
+}
+.test{
+  @include pseudoBlock();
+}
+/*
+  display: flex - отображение
+  flex-direction - направление
+  justify-content - выравнивание внутренних элементов
+*/
+.date{
+  @extend .blacks;
+  text-decoration: underline;
+  font-size: 25px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  @include resp-min(sm){
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+  }
+}
+.stoptalking{
+  @include bg('../img/bg-sec1.jpg');
+}
+.text-block{
+  p{
+    margin-bottom: 15px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+}
+.bones-images{
+  @include resp-min(md){
+    margin-top: 70px;
+  }
+}
+.routine{
+  @include bg("../img/routine.jpg");
+}
+.bg{
+  &-org{
+    @include bg("../img/org.jpg");
+  }
+  &-results{
+    @include bg("../img/results.jpg");
+  }
+  &-orange{
+    background-color: setColor(orange);
+  }
+  &-grey{
+    &-light{
+      background-color: #f9f9f9;
+    }
+  }
+}
+%block-wrapper{
+  margin-top: 30px;
+  @include resp-min(sm){
+    margin-top: 60px;
+  }
+}
+.step{
+  &-number{
+    color: setColor(orange);
+    @extend .blacks;
+    font-size: 48px;
+    margin-bottom: 10px;
+    &-inner{
+      display: inline-block;
+      position: relative;
+      line-height: 1.1;
+      &:after{
+        @extend .pseudo;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: setColor(orange);
+      }
+    }
+  }
+  &-wrapper{
+    @extend %block-wrapper;
+  }
+  &-body{
+    &-border{
+      margin-top: 15px;
+      border-bottom: 3px solid setColor(orange);
+      padding-bottom: 15px;
+    }
+  }
+  &-footer{
+    text-align: center;
+    margin-top: 15px;
+    &-title{
+      @extend .bold;
+      margin-bottom: 15px;
+    }
+  }
+  @include resp-max(md){
+    &-body-border-wrap &-number{
+      text-align: center;
+    }
+    &-wrap{
+      margin-bottom: 30px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+  @include resp-min(sm){
+    &-wrap{
+      min-height: 200px;
+    }
+    &-footer{
+      margin-top: 30px;
+      &-title{
+        min-height: 90px;
+        margin-bottom: 30px;
+      }
+    }
+    @include resp-max(md){
+      &-body-border{
+        min-height: 150px;
+      }
+    }
+  }
+  @include resp-min(md){
+    &-body{
+      &-border{
+        min-height: 235px;
+      }
+    }
+    &-footer{
+      &-title{
+        min-height: 105px;
+      }
+    }
+  }
+  @include resp-min(lg){
+    &-body{
+      &-border{
+        min-height: 275px;
+      }
+      &-big{
+        font-size: 21px;
+      }
+    }
+  }
+}
+.result{
+  &-wrapper{
+    @extend %block-wrapper;
+  }
+  &-title{
+    @extend .blacks;
+    @extend .color-orange;
+    font-size: 21px;
+  }
+  @include resp-max(sm){
+    &-wrap{
+      margin-bottom: 30px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+  @include resp-max(lg){
+    &-wrapper{
+      text-align: center;
+    }
+    &-title{
+      margin-bottom: 15px;
+    }
+    @include resp-min(sm){
+      &-wrap{
+        min-height: 260px;
+      }
+      &-image{
+        height: 85px;
+        img{
+          vertical-align: middle;
+        }
+        &:before{
+          content: "";
+          display: inline-block;
+          height: 100%;
+          vertical-align: middle;   
+        }
+      }
+    }
+    @include resp-min(md){
+      &-wrap{
+        min-height: 280px;
+      }
+    }
+  }
+  @include resp-min(lg){
+    &-wrap{
+      min-height: 230px;
+    }
+    &-header{
+      min-height: 80px;
+      @include cf();
+    }
+    &-image,
+    &-title{
+      display: inline-block;
+      vertical-align: middle;
+    }
+    &-image{
+      max-width: 70px;
+      margin-right: 10px;
+    }
+    &-title{
+      width: 280px;
+    }
+  }
+}
+.slider{
+  &-image{
+    font-size: 0;
+    img{
+      border: 3px solid setColor(orange);
+    }
+  }
+  &-title{
+    @extend .blacks;
+    font-size: 21px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    &.big{
+
+    }
+  }
+  &-wrapper{
+    margin-top: 60px;
+    .list{
+      line-height: 1.2;
+    }
+    .owl{
+      &-stage-outer{
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        z-index: 2;
+      }
+      &-controls{
+        z-index: 1;
+      }
+      &-nav{
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: -55px;
+      }
+      &-prev,
+      &-next{
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        border-radius: 100%;
+        background-color: setColor(corp);
+        @extend %shadow;
+        &:after{
+          @extend .pseudo;
+          @include bg("../img/arrow.png");
+          width: 10px;
+          height: 22px;
+          top: 50%;
+          margin-top: -11px;
+        }
+        &:hover{
+          &:after{
+            @include bg("../img/arrow-hover.png");
+          }
+        }
+      }
+      &-prev{
+        left: 15px;
+        &:after{
+          transform: scale(-1, 1);
+          left: 10px;
+        }
+      }
+      &-next{
+        right: 15px;
+        &:after{
+          right: 10px;
+        }
+      }
+      @include resp-min(lg){
+        &-nav{
+          top: 50%;
+          margin-top: -82.5px;
+        }
+        &-prev,
+        &-next{
+          width: 165px;
+          height: 165px;
+          &:after{
+            width: 35px;
+            height: 73px;
+            margin-top: -36.5px;
+          }
+        }
+        &-prev{
+          left: -65px;
+          &:after{
+            left: 15px;
+          }
+        }
+        &-next{
+          right: -65px;
+          &:after{
+            right: 15px;
+          }
+        }
+      }
+    }
+    .item{
+      padding: 15px;
+    }
+  }
+  &-results{
+    margin-bottom: 20px;
+  }
+  &-man{
+    &-image{
+      font-size: 0;
+      img{
+        max-height: 78px;
+      }
+    }
+  }
+  @include resp-max(sm){
+    &-image{
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    &-results{
+      &-inner{
+        margin-bottom: 15px;
+      }
+    }
+  }
+  @include resp-min(md){
+    &-title{
+      font-size: 28px;
+      &.big{
+        margin-bottom: 30px;
+      }
+    }
+  }
+  @include resp-min(lg){
+    &-wrapper{
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+  }
+}
+.scheme{
+  position: relative;
+  display: inline-block;
+  img{
+    box-shadow: 0 0 20px rgba(0,0,0,.2);
+  }
+  &-link{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -34px;
+    margin-left: -34px;
+    width: 68px;
+    height: 68px;
+    background-color: setColor(corp);
+    border-radius: 100%;
+    @extend %shadow;
+    &:after{
+      @extend .pseudo;
+      left: 50%;
+      top: 50%;
+      margin-left: -16px;
+      margin-top: -16px;
+      width: 32px;
+      height: 32px;
+      @include bg("../img/zoom.png");
+    }
+  }
+  @include resp-max(md){
+    &-wrap{
+      text-align: center;
+      margin-bottom: 30px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+  @include resp-min(md){
+    &-small{
+      img{
+        margin-top: 30px;
+      }
+    }
+  }
+}
+.requirements{
+  @include bg("../img/requirements.jpg");
+}
+.himself{
+  &-image{
+    &-inner{
+      display: inline-block;
+      position: relative;
+    }
+  }
+  &-shadow{
+    position: absolute;
+    top: 0;
+    left: 7.5px;
+    z-index: -1;
+  }
+  @include resp-max(sm){
+    &-image{
+      margin-bottom: 15px;
+    }
+  }
+  @include resp-max(lg){
+    &-wrap{
+      margin-bottom: 45px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+    @include resp-min(sm){
+      text-align: center;
+      &-image{
+        min-height: 150px;
+      }
+      &-wrap{
+        min-height: 275px;
+      }
+    }
+  }
+  @include resp-min(lg){
+    &-wrap{
+      min-height: 150px;
+    }
+    &-image,
+    &-text{
+      display: inline-block;
+      vertical-align: middle;
+    }
+    &-image{
+      width: 25%;
+      height: 130px;
+      img{
+        vertical-align: middle;
+      }
+      &:before{
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+      }
+    }
+    &-text{
+      padding-left: 15px;
+      width: 74%;
+    }
+  }
+}
+
+.building{
+  @include resp-max(md){
+    img{
+      max-height: 300px;
+    }
+  }
+}
+.trener{
+  &-bg{
+    @include bg("../img/bg-trener.jpg");
+    padding-bottom: 0;
+  }
+  &-title{
+    font-size: 24px;
+    margin-bottom: 30px;
+    @extend .blacks;
+  }
+  &-image{
+    font-size: 0;
+  }
+  &-name{
+    font-size: 21px;
+  }
+  &-inf{
+    margin-bottom: 30px;
+  }
+  @include resp-max(md){
+    &-image{
+      max-height: 500px;
+    }
+  }
+  @include resp-min(md){
+    &-bg{
+      padding-top: 0;
+    }
+    &-title{
+      margin-bottom: 40px;
+    }
+    &-text{
+      margin-top: 140px;
+    }
+
+    @include resp-max(lg){
+      &-image{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+      &-column{
+        min-height: 600px;
+      }
+    }
+  }
+}
+.text-fluid{
+  &-wrap{
+    margin-top: 30px;
+  }
+  margin-bottom: 30px;
+  &:last-child{
+    margin-bottom: 0;
+  }
+  &-title{
+    font-size: 21px;
+    @extend .blacks;
+    margin-bottom: 5px;
+  }
+  @include resp-min(md){
+    margin-bottom: 45px;
+    &-wrap{
+      margin-top: 70px;
+    }
+  }
+}
+.fluid-inner{
+  &.b-m-t{
+    margin-top: 30px;
+  }
+  @include resp-min(md){
+    &.b-m-t{
+      margin-top: 100px;
+    }
+  }
+}
+#googlemaps{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  overflow: hidden;
+}
+.googlemaps{
+  &-text{
+    z-index: 3;
+  }
+  @include resp-min(md){
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+}
+.video{
+  &-wrap{
+    position: relative;
+    display: inline-block;
+    img{
+      box-shadow: 0 0 24px rgba(0,0,0,.2);
+    }
+  }
+  &-play{
+    border: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 70px;
+    height: 70px;
+    margin-left: -35px;
+    margin-top: -35px;
+    border-radius: 100%;
+    background-color: #124fff;
+    box-shadow: 0 7px 10px rgba(18,79,255,.3), inset 0 -3px rgba(0,0,0,.2);
+    outline: none;
+    &:after{
+      @extend .pseudo;
+      left: 50%;
+      top: 50%;
+      width: 29px;
+      height: 21px;
+      margin-left: -11.5px;
+      margin-top: -10.5px;
+      @include bg("../img/triangle.png");
+    }
+  }
+  @include resp-min(md){
+    &-wrap{
+      img{
+        min-height: 380px;
+      }
+    }
+  }
+}
+.org{
+  @include resp-min(md){
+    &-margin{
+      margin-top: 100px;
+    }
+  }
+}
+/* Cначала обозначаем стили для IE8 и более старых версий
+т.е. здесь мы немного облагораживаем стандартный чекбокс. */
+.checkbox {
+  vertical-align: top;
+  margin: 0 3px 0 0;
+  width: 17px;
+  height: 17px;
+}
+/* Это для всех браузеров, кроме совсем старых, которые не поддерживают
+селекторы с плюсом. Показываем, что label кликабелен. */
+.checkbox + label {
+  cursor: pointer;
+}
+
+/* Далее идет оформление чекбокса в современных браузерах, а также IE9 и выше.
+Благодаря тому, что старые браузеры не поддерживают селекторы :not и :checked,
+в них все нижеследующие стили не сработают. */
+
+/* Прячем оригинальный чекбокс. */
+.checkbox:not(checked) {
+  position: absolute;
+  opacity: 0;
+}
+.checkbox:not(checked) + label {
+  position: relative; /* будем позиционировать псевдочекбокс относительно label */
+  padding: 0 0 0 60px; /* оставляем слева от label место под псевдочекбокс */
+}
+/* Оформление первой части чекбокса в выключенном состоянии (фон). */
+.checkbox:not(checked) + label:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 65px;
+  height: 40px;
+  border-radius: 50px;
+  background: setColor(orange);
+  border: 3px solid #e5e5e5;
+}
+/* Оформление второй части чекбокса в выключенном состоянии (переключатель). */
+.checkbox:not(checked) + label:after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  width: 35px;
+  height: 36px;
+  border-radius: 36px;
+  background: #FFF;
+  transition: all .2s;
+}
+/* Меняем фон чекбокса, когда он включен. */
+.checkbox:checked + label:before {
+  background: setColor(corp);
+  border-color: transparent;
+}
+/* Сдвигаем переключатель чекбокса, когда он включен. */
+.checkbox:checked + label:after {
+  left: 27px;
+}
+/* Показываем получение фокуса. */
+// .checkbox:focus + label:before {
+//   box-shadow: 0 0 0 3px rgba(255,255,0,.5);
+// }
+@keyframes rotateAlwaysRight {
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateAlwaysLeft {
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(-360deg);
+  }
+}
+.rotateAlways{
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  &-right{
+    @extend .rotateAlways;
+    animation-name: rotateAlwaysRight;
+  }
+  &-left{
+    @extend .rotateAlways;
+    animation-name: rotateAlwaysLeft;
+  }
+}
+.mechanism{
+
+  > div{
+    position: absolute;
+  }
+
+  &-number{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    margin-top: -15px;
+    margin-left: -15px;
+    @extend .bold;
+    font-size: 21px;
+  }
+  &-wrap{
+    margin-top: 30px;
+  }
+  &-block{
+    z-index: 1;
+  }
+  &-check-wrap{
+    display: none;
+  }
+  &-title{
+    @extend .bold;
+  }
+  &-header{
+    padding-bottom: 15px;
+  }
+  &-list{
+    margin-top: 14px;
+    li{
+      margin-bottom: 13px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+  &-block{
+    &-title{
+      @extend .blacks;
+      position: relative;
+      font-size: 21px;
+      &:after{
+        @extend .pseudo;
+        
+        width: 44px;
+        height: 92px;
+        @include bg("../img/arrowBlock.png");
+      }
+    }
+  }
+  &-big{
+    &-title{
+      margin-top: 30px;
+      font-size: 21px;
+    }
+  }
+  &-big{
+    &-inner{
+      display: inline-block;
+      width: 181px;
+      height: 181px;
+      @include bg("../img/mech_big_change.png", 1px 5px);
+    }
+  }
+  &-med{
+    &-inner{
+      display: inline-block;
+      width: 120px;
+      height: 120px;
+      @include bg("../img/mech_med_change.png", 4px 2px);
+    }
+    &-small{
+      &-inner{
+        display: inline-block;
+        width: 85px;
+        height: 88px;
+        @include bg("../img/mech_med_small_change.png");
+      }
+    }
+  }
+  &-small{
+    &-inner{
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      @include bg("../img/mech_small_change.png");
+    }
+  }
+  &-1{
+    top: 145px;
+    left: 55px;
+    &-medium{
+      position: relative;
+      left: 0;
+      top:  0;
+      &-small{
+        position: relative;
+        left: -44px;
+        top: 48px;
+      }
+    }
+    &-small{
+      position: relative;
+      left: -65px;
+      top: -11px;
+    }
+  }
+  &-2{
+    left: 14px;
+    top: 280px;
+  }
+  &-3{
+    top: 441px;
+    left: 131px;
+    &-small{
+      position: relative;
+      top: -108px;
+      left: -50px;
+    }
+  }
+  &-4{
+    top: 943px;
+    left: 21px;
+  }
+  &-5{
+    top: 902px;
+    right: 61px;
+  }
+  &-6{
+    top: 1215px;
+    right: 90px;
+  }
+  &-7{
+    top: 15px;
+    left: 147px;
+  }
+  &-white{
+    &-big{
+      width: 194px;
+      height: 194px;
+      @include bg("../img/mech_onlywhite_big.png");
+    }
+    &-medium{
+      width: 147px;
+      height: 147px;
+      @include bg("../img/mech_onlywhite.png");
+      &-normal{
+        width: 114px;
+        height: 113px;
+        @include bg("../img/mech_onlywhite_medium.png");
+      }
+      &-small{
+        width: 66px;
+        height: 71px;
+        @include bg("../img/mech_onlywhite_medium_small.png");
+      }
+    }
+    &-small{
+      width: 57px;
+      height: 51px;
+      @include bg("../img/mech_onlywhite_small.png");
+    }
+    &-1{
+      top: 5px;
+      left: 10px;
+    }
+    &-2{
+      top: 253px;
+      left: 198px;
+    }
+    &-3{
+      top: 544px;
+      left: 187px;
+      &-medium-small{
+        position: relative;
+        left: 59px;
+        top: -18px;
+      }
+    }
+    &-4{
+      top: 620px;
+      left: 45px;
+    }
+    &-5{
+      top: 700px;
+      right: 25px;
+    }
+    &-6{
+      top: 823px;
+      left: 75px;
+      &-medium-small{
+        top: -138px;
+        left: 94px;
+        position: relative;
+      }
+      &-small{
+        position: relative;
+        left: 141px;
+        top: -168px;
+      }
+    }
+    &-7{
+      top: 1057px;
+      left: 102px;
+      &-medium{
+        position: relative;
+        left: 102px;
+        top: -101px;
+      }
+      &-small{
+        position: relative;
+        top: -149px;
+        left: 56px;
+      }
+    }
+  }
+  &.pause{
+    .rotateAlways{
+      animation-play-state: paused;
+    }
+  }
+  @include resp-max(lg){
+    display: none;
+    &-block{
+      margin-bottom: 30px;
+    }
+    &-title{
+      font-size: 21px;
+    }
+    &-block{
+      &-title{
+        padding-top: 50px;
+        &:after{
+          left: 25px;
+          top: -25px;
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+  @include resp-min(md){
+    &-header{
+      padding-bottom: 21px;
+    }
+    &-wrap{
+      margin-top: 60px;
+    }
+    &-check-wrap{
+      width: 70px;
+      min-height: 45px;
+    }
+  }
+  @include resp-min(lg){
+    &-wrap{
+      > div{
+        min-height: 1600px;
+      }
+    }
+    &-title,
+    &-check-wrap{
+      display: inline-block;
+      vertical-align: top;
+    }
+    &-title{
+      font-size: 21px;
+      width: 79%;
+      padding-left: 10px;
+      line-height: 1.1;
+    }
+    &-block{
+      margin-bottom: 63px;
+      &-2,
+      &-4,
+      &-6{
+        position: absolute;
+        left: -196%;
+        width: 93%;
+      }
+    }
+    &-big{
+      &-title{
+        width: 970px;
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 36px;
+      }
+    }
+    &-block{
+      &-title{
+        position: absolute;
+        top: 1220px;
+        width: 374px;
+        left: 780px;
+        &:after{
+          left: -62px;
+          top: 12px;
+        }
+      }
+    }
+  }
+}
+.mechanism-checkbox2 .mechanism-2 .mechanism-big-inner,
+.mechanism-checkbox5 .mechanism-5 .mechanism-big-inner,
+.mechanism-checkbox7 .mechanism-7 .mechanism-big-inner{
+  background-position: -187px 4px;
+}
+.mechanism-checkbox1 .mechanism-1 .mechanism-med-inner,
+.mechanism-checkbox3 .mechanism-3 .mechanism-med-inner,
+.mechanism-checkbox4 .mechanism-4 .mechanism-med-inner,
+.mechanism-checkbox6 .mechanism-6 .mechanism-med-inner{
+  background-position: -117px 2px;
+}
+.mechanism-checkbox3 .mechanism-3 .mechanism-small-inner,
+.mechanism-checkbox1 .mechanism-1 .mechanism-small-inner{
+  background-position: -51px 0;
+}
+.mechanism-checkbox1 .mechanism-med-small-inner{
+  background-position: -82px 0;
+}
+.big-image{
+  position: relative;
+  a{
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  @include resp-max(sm){
+    a{
+      display: block;
+    }
+  }
+}

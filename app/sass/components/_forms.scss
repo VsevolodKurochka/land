@@ -1,0 +1,48 @@
+.main-form{
+  width: 100%;
+  @extend .center-block;
+  input{
+    border: none;
+    border-bottom: 2px solid setColor(orange);
+    border-radius: 0;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    margin-bottom: 30px;
+    color: #000;
+    font-size: 18px;
+    font-style: italic;
+    outline: none;
+    @extend .block-inline;
+    @extend .regular;
+    @extend .transition;
+    &:focus{
+      border-color: setColor(corp);
+    }
+  }
+  .vbtn{
+    width: 100%;
+    outline: none;
+  }
+  &-price{
+    @extend .blacks;
+    color: setColor(corp);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    &-old{
+      @extend .regular;
+      color: #606060;
+      text-decoration: line-through;
+    }
+  }
+  &-block{
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 24px rgba(0,0,0,.2);
+    padding: 15px 15px 30px;
+    @include resp-min(sm){
+      padding: 15px 30px 30px;
+    }
+  }
+}

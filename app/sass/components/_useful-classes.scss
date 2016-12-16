@@ -1,0 +1,24 @@
+.transition{
+  @include transitionMake();
+}
+.pseudo{
+  @include pseudo();
+}
+.vertical-image{
+  &:before{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;   
+  }
+  img{
+    max-height: 100%;
+    vertical-align: middle;   
+  }
+}
+%shadow{
+  box-shadow: 0 7px 10px rgba(18,79,255,.3)
+}
+.ovh{
+  overflow: hidden;
+}

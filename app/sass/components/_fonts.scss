@@ -1,0 +1,22 @@
+/* ===================== 
+Start: Connect fonts      
+======================== */
+// @include connect-font(ProximaRegular,regular);
+// @include connect-font(ProximaBold,bold);
+// @include connect-font(ProximaLight,light);
+// @include connect-font(ProximaBlack,black_font);
+.light{
+	font-weight: 100;
+}
+.regular{
+	font-weight: 400;
+}
+.bold{
+	font-weight: 700;
+}
+.blacks{
+	font-weight: 900;
+}
+/* =====================
+End:  Connect fonts
+======================== */
